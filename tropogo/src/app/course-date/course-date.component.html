@@ -1,0 +1,90 @@
+<section>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <h4 class="h4 ml10px">BATCH 1</h4>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field class="w150" appearance="fill">
+                                <input matInput [matDatepicker]="picker" placeholder=" DD MM YYYY">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field class="w150" appearance="fill">
+                                <input matInput [matDatepicker]="picker1">
+                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><img src="../../../assets/images/ic_moreoptions.png" alt=""></a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a (click)="reset()">Reset</a></li>
+                                    <li>
+                                        <a (click)="delete()"><img src="../../assets/images/ic_delete.png" alt=""> Delete</a>
+                                    </li>
+                                </ul>
+                                <img data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="chevronexpand" src="../../../assets/images/ic_chevronexpand.png" alt="">
+                            </div>
+                            <!-- <img id="chevroncollapse" (click)="chevroncollapse()" style="display: none;" src="../../../assets/images/ic_chevroncollapse.png" alt=""> -->
+
+                        </div>
+
+                    </div>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-4">
+                            <h4 class="h41">Course Location</h4>
+                            <!-- <mat-form-field appearance="fill">
+                  <mat-label>Favorite food</mat-label>
+                  <mat-select>
+                      <mat-option *ngFor="let food of foods" [value]="food.value">
+                          {{food.viewValue}}
+                      </mat-option>
+                  </mat-select>
+              </mat-form-field> -->
+                            <select class="form-control" name="" id="">
+                <option *ngFor="let food of foods" [value]="food.value">{{food.viewValue}}</option>
+              </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-4">
+                            <h4 class="h41">Course Language</h4>
+                            <select class="form-control" name="" id="">
+                <option *ngFor="let food of foods" [value]="food.value">{{food.viewValue}}</option>
+              </select>
+                        </div>
+                        <div class="col-md-4">
+                            <h4 class="h41">Course Cost(Ex GST)</h4>
+                            <select class="form-control" name="" id="">
+                <option *ngFor="let food of foods" [value]="food.value">{{food.viewValue}}</option>
+              </select>
+                        </div>
+                    </div>
+                    <div class="row mt16">
+                        <div class="col-md-offset-3 col-md-9">
+                            <h4 class="h4regular">Is this a weekend course?
+                                <label class="radio-inline">
+                                <input type="radio" name="optradio" checked>Yes
+                              </label>
+                                <label class="radio-inline">
+                                <input type="radio" name="optradio">No
+                              </label></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

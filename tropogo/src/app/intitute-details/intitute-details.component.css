@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'AvenirNext-Heavy';
+    src: url('../../assets/fonts/AvenirNext-Heavy.ttf') format('truetype'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('../../assets/fonts/AvenirNext-Heavy.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap');
+.mt16 {
+    margin-top: 16px;
+}
+
+.prog_bar {
+    width: 1366px;
+    height: 12px;
+    background-color: #EEEFF5;
+}
+
+.filled {
+    width: 507px;
+    height: 12px;
+    background-color: #03C772;
+}
+
+.section1 .left {}
+
+.section1 .right {
+    background-color: #F5F6FA;
+}
+
+.add_detail {
+    /*    width: 453px;*/
+    margin: 0px 120px;
+}
+
+.add_detail h1 {
+    font-family: AvenirNext-Heavy;
+    color: #17073D;
+    font-size: 32px;
+    line-height: 44px;
+}
+
+.h90w348 {
+    height: 90px;
+    width: 438px;
+}
+
+.h16w186 {
+    height: 16px;
+    widows: 348px;
+}
+
+.h4 {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.h60w60 {
+    height: 60px;
+    width: 60px;
+    margin-top: 16px;
+}
+
+.h60w60 img {
+    opacity: 100%;
+}
+
+.logo_change {
+    font-size: 12px;
+    line-height: 16px;
+    vertical-align: bottom;
+}
+
+.h41 {
+    font-size: 12px;
+    line-height: 16px;
+    /* vertical-align: bottom; */
+    color: #005CD5;
+    cursor: pointer;
+}
+
+.fileName {
+    height: 12px !important;
+    line-height: 16px;
+    color: #7A7683;
+}
+
+.border {
+    border-top: 1px solid #7A7683;
+    border-bottom: 1px solid #7A7683;
+}

@@ -1,0 +1,78 @@
+<section class="section1">
+    <div class="row prog_bar">
+        <div class="filled"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 left">
+            <div class="add_detail">
+                <div class="h90w348">
+                    <h1>Add some details of your training institute</h1>
+                </div>
+                <div class="h16w186">
+                    <h4 class="h4 mt16">INSTITUTE LOGO</h4>
+                </div>
+                <div><img class="h60w60" src="assets/images/ic_logoiid.png" alt=""> <a class="logo_change" href="#">CHANGE</a></div>
+                <div class="row mt16">
+                    <div class="col-md-12">
+                        <mat-form-field>
+                            <mat-label>NAME OF THE INSTITUTE</mat-label>
+                            <input matInput type="text" [(ngModel)]="instituteName" required>
+                            <mat-error *ngIf="instituteName==''"></mat-error>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4 class="h4">INSTITUTE BROUCHER <span>(OPTIONAL)</span></h4>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="h41"><img src="assets/images/ic_upload.png" alt=""><span (click)="upload1.click()"> UPLOAD</span></h4>
+                        <input style="display: none" #attachments type="file" (change)="clickUpload1($event)" #upload1 multiple="true">
+                    </div>
+                    <div class="row col-md-12" *ngFor="let selected of listOfFiles1;let index = index">
+                        <div class="col-md-10">
+                            <h5 class="fileName">{{selected}}</h5>
+                        </div>
+                        <div class="col-md-2"> <img src="assets/images/ic_delete.png" (click)="removeSelectedFile1(index)" alt=""></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4 class="h4">CERTIFICATIONS <span>(OPTIONAL)</span></h4>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="h41"><img src="assets/images/ic_upload.png" alt=""><span (click)="upload2.click()"> UPLOAD</span></h4>
+                        <input style="display: none" #attachments type="file" (change)="clickUpload2($event)" #upload2 multiple="true">
+                    </div>
+                    <div class="row col-md-12" *ngFor="let selected of listOfFiles2;let index = index">
+                        <div class="col-md-10">
+                            <h5 class="fileName">{{selected}}</h5>
+                        </div>
+                        <div class="col-md-2"> <img src="assets/images/ic_delete.png" (click)="removeSelectedFile2(index)" alt=""></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4 class="h4">INSTITUTE / COURSE GALLERY</h4>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="h41"><img src="assets/images/ic_upload.png" alt=""><span (click)="upload3.click()"> UPLOAD</span></h4>
+                        <input style="display: none" #attachments type="file" (change)="clickUpload3($event)" #upload3 multiple="true">
+                    </div>
+                    <div class="row col-md-12" *ngFor="let selected of listOfFiles3;let index = index">
+                        <div class="col-md-10">
+                            <h5 class="fileName">{{selected}}</h5>
+                        </div>
+                        <div class="col-md-2"> <img src="assets/images/ic_delete.png" (click)="removeSelectedFile3(index)" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center"><button class="btn btn-success" (click)="nextpage()">NEXT</button></div>
+        </div>
+        <div class="col-md-6 right">
+            <img src="assets/images/bg_1.png" alt="">
+        </div>
+
+    </div>
+</section>

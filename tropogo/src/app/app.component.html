@@ -1,0 +1,9 @@
+<header>
+    <div class="row">
+        <div class="col-md-12">
+            <img class="logo" src="assets/images/logo.png" alt="">
+        </div>
+    </div>
+    <app-intitute-details [hidden]="page==1?false:true" (onPageChange)="page=$event"></app-intitute-details>
+    <app-add-course [hidden]="page==2?false:true" (onPageChange)="page=$event"></app-add-course>
+    <app-listing-dashboard [hidden]="page==3?false:true"></app-listing-dashboard>

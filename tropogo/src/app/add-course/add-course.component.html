@@ -1,0 +1,167 @@
+<section class="section1">
+    <div class="row prog_bar">
+        <div class="filled2"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 left">
+            <div class="add_detail">
+                <div class="h48w429">
+                    <h1>Add course details</h1>
+                </div>
+                <div class="h22w186">
+                    <h3 class="h3 mt16">COURSE 1</h3>
+                </div>
+                <div class="coursename mt16">
+                    <mat-form-field>
+                        <mat-label>COURSE NAME</mat-label>
+                        <input matInput type="text" [(ngModel)]="courseName" placeholder="Add course name" required>
+                        <mat-error *ngIf="courseName==''"></mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="coursename">
+                    <h4 class="h4 mt16">AIRCRAFT TYPE</h4>
+                    <label class="radio-inline">
+                      <input type="radio" name="optradio1" checked> Multi Rotar
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="optradio1"> Fixed Wing
+                    </label>
+                </div>
+                <div class="mt16">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h4 class="h4">BATCH</h4>
+                        </div>
+                        <div class="col-md-4">
+                            <h4 class="h4">START DATE</h4>
+                        </div>
+                        <div class="col-md-4">
+                            <h4 class="h4">END DATE</h4>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <section *ngFor="let item of addCourse; let i = index;">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <h4 class="h4 ml10px">BATCH 1</h4>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <mat-form-field class="w150" appearance="fill">
+                                                        <input matInput [matDatepicker]="picker" [(ngModel)]="item.startDate" placeholder=" DD MM YYYY" required>
+                                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                                        <mat-datepicker #picker></mat-datepicker>
+                                                        <mat-error *ngIf="item.startDate==''"></mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <mat-form-field class="w150" appearance="fill">
+                                                        <input matInput [matDatepicker]="picker1" [(ngModel)]="item.endDate" placeholder=" DD MM YYYY" required>
+                                                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                                        <mat-datepicker #picker1></mat-datepicker>
+                                                        <mat-error *ngIf="item.endDate==''"></mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="dropdown">
+                                                        <a class="dropdown-toggle cursor" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><img src="assets/images/ic_moreoptions.png" alt=""></a>
+                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                            <li>
+                                                                <a class="cursor" (click)="reset(i)"><img src="assets/images/reset.png" alt=""> Reset</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="cursor" (click)="delete(i)"><img src="assets/images/ic_delete.png" alt=""> Delete</a>
+                                                            </li>
+                                                        </ul>
+                                                        <img class="cursor" data-toggle="collapse" [attr.data-target]="'#collapseOne'+i" aria-expanded="true" aria-controls="collapseOne" id="chevronexpand" src="assets/images/ic_chevronexpand.png" alt="">
+                                                    </div>
+                                                    <!-- <img id="chevroncollapse" (click)="chevroncollapse()" style="display: none;" src="assets/images/ic_chevroncollapse.png" alt=""> -->
+
+                                                </div>
+
+                                            </div>
+                                        </h4>
+                                    </div>
+                                    <div [id]="'collapseOne'+i" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-offset-2 col-md-4">
+                                                    <mat-form-field appearance="fill">
+                                                        <mat-label>Course Location</mat-label>
+                                                        <mat-select [(ngModel)]="item.location" required>
+                                                            <mat-option *ngFor="let item of locations" [value]="item.value">
+                                                                {{item.viewValue}}
+                                                            </mat-option>
+                                                        </mat-select>
+                                                        <mat-error *ngIf="item.location==''"></mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-offset-2 col-md-4">
+                                                    <mat-form-field appearance="fill">
+                                                        <mat-label>Course Language</mat-label>
+                                                        <mat-select [(ngModel)]="item.language" required>
+                                                            <mat-option *ngFor="let item of language" [value]="item.value">
+                                                                {{item.viewValue}}
+                                                            </mat-option>
+                                                        </mat-select>
+                                                        <mat-error *ngIf="item.language==''"></mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <mat-form-field>
+                                                        <mat-label>Course Cost(Ex GST)</mat-label>
+                                                        <input matInput type="text" [(ngModel)]="item.cost" required>
+                                                        <mat-error *ngIf="item.cost==''"></mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+                                            <div class="row mt16">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                    <mat-radio-group aria-label="Select an option">
+                                                        <mat-label>Is this a weekend course? </mat-label>
+                                                        <mat-radio-button value="yes"> Yes </mat-radio-button><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                        <mat-radio-button value="no"> No</mat-radio-button>
+                                                    </mat-radio-group>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+                    <!-- <app-course-date></app-course-date> -->
+                    <div class="row">
+                        <div>
+                            <a (click)="addForm()" class="add-another"> <img src="assets/images/sign-add-icon.png" alt=""> ADD ANOTHER COURSE</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coursename mt16">
+                    <mat-form-field>
+                        <mat-label>COURSE DETAILS</mat-label>
+                        <textarea matInput type="textarea" [(ngModel)]="courseDetails" placeholder="Add course details" required></textarea>
+                        <mat-error *ngIf="courseName==''"></mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="text-center">
+                <button (click)="skipDashboard()" class="btn btn-default"> SKIP </button>
+                <button (click)="this.onPageChange.emit(1)" class="btn btn-default ml5"> BACK </button>
+                <button (click)="nextPage()" class="btn btn-success ml5"> NEXT </button></div>
+        </div>
+        <div class="col-md-6 right">
+            <img src="assets/images/bg_2.png" alt="">
+        </div>
+
+    </div>
+</section>
